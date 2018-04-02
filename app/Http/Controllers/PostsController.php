@@ -8,6 +8,7 @@ use Session;
 use App\Post;
 use App\Category;
 use App\Tag;
+use Auth;
 
 class PostsController extends Controller
 {
@@ -61,7 +62,8 @@ class PostsController extends Controller
             'featured'     =>   'uploads/posts/'.$featured_new_name,
             'content'      =>   $request->content,
             'category_id'  =>   $request->category_id,
-            'slug'         =>   str_slug($request->title)
+            'slug'         =>   str_slug($request->title),
+            'user_id'      =>  Auth::id()
 
         ]);
 

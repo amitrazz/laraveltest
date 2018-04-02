@@ -11,9 +11,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-   
+   @yield('style')
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     
 </head>
 <body>
@@ -68,7 +69,8 @@
                 @if(auth::check())
                     <div class="col col-lg-3">
                         <ul class="list-group">
-                            <li class="list-group-item"><a href="{{route('home')}}">Dashboard</a></li>
+                            <li class="list-group-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+                            <li class="list-group-item"><a href="{{route('settings')}}">Settings</a></li>
                             <li class="list-group-item"><a href="{{route('posts')}}">All Posts</a></li>
                             <li class="list-group-item"><a href="{{route('post.create')}}">Add Post</a></li>
                             <li class="list-group-item"><a href="{{route('post.trashed')}}">Trashed Post</a></li>
@@ -102,5 +104,6 @@
             toastr.info("{{Session::get('info')}}")
             @endif
         </script>
+    @yield('script')
 </body>
 </html>

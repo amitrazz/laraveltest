@@ -1,5 +1,5 @@
 @extends('layouts.app')
-  @section('content')
+@section('content')
   @include('admin.includes.errors')
   <div class="panel panel-default">
         <div class="panel panel-heading"> profile </div>
@@ -24,12 +24,12 @@
                           <input type="email" name="email" value="{{$user->email}}" class="form-control" id="usr">
                       </div>
                       <div class="form-group">
-                          <label for="usr">New password:</label>
-                          <input type="password" name="password"  class="form-control" id="usr">
+                          <label for="usr">password:</label>
+                          <input type="password" name="password" value="{{$user->password}}"  class="form-control" id="usr">
                       </div>
                       <div class="form-group">
                           <label for="usr">About you:</label>
-                          <textarea name="about" rows="5" cols="50" class="form-control" id="usr">{{$user->profile->about}}</textarea>
+                          <textarea name="about"   rows="5" cols="50" class="form-control"></textarea>{{$user->profile->about}}</textarea>
                       </div>
                       <div class="form-group">
                           <label for="usr">facebook:</label>

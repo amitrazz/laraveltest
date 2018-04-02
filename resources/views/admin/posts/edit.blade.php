@@ -46,11 +46,23 @@
                             </div>
                         <div class="form-group">
                             <label for="comment">Content:</label>
-                            <textarea class="form-control" name="content" rows="5" id="comment">{{$post->content}}</textarea>
+                            <textarea class="form-control" name="content" rows="5" id="summernote">{{$post->content}}</textarea>
                         </div>
                        <button type="submit" class="btn btn-default">Submit</button>
                     </form>
         </div>
       </div>
+  @stop
+   
+  @section('style')
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+  @stop
+  @section('script')
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+  <script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+      });
+  </script>
   @stop
   
